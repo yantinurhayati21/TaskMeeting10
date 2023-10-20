@@ -1,0 +1,73 @@
+CREATE DATABASE perpustakaan;
+USE perpustakaan;
+
+CREATE TABLE anggota (
+id_anggota CHAR (3) PRIMARY KEY,
+nama VARCHAR(15),
+jenis_kelamin CHAR(1),
+alamat VARCHAR(25),
+telepon VARCHAR(12),
+email VARCHAR(30)
+);
+
+CREATE TABLE pegawai (
+id_pegawai CHAR (3) PRIMARY KEY,
+nama VARCHAR(15),
+jenis_kelamin CHAR(1),
+alamat VARCHAR(25),
+telepon VARCHAR(12),
+email VARCHAR(30)
+);
+
+
+CREATE TABLE buku (
+id_buku CHAR (3) PRIMARY KEY,
+judul VARCHAR(35),
+penulis VARCHAR(35),
+penerbit VARCHAR(30)
+);
+
+CREATE TABLE peminjaman (
+id_peminjaman CHAR (3) PRIMARY KEY,
+id_anggota CHAR (3),
+tanggal_pinjam VARCHAR (10),
+tanggal_kembali VARCHAR (10),
+tanggal_pengembalian VARCHAR (10)
+);
+
+INSERT INTO anggota VALUES 
+('A01',"Yanti Nurhayati",'p',"Ciamis",'085321840790',"yanti@gmail.com"),
+('A02',"Hilwa Isnaini Marfuah",'p',"Tangerang",'085765123980',"hilwa@gmail.com"),
+('A03',"Tisatun Riza Fauziah",'p',"Banjar",'085767911082',"tisatun@gmail.com"),
+('A04',"Imron Sihaloho",'l',"Sumatra Utara",'082923288090',"imron@gmail.com"),
+('A05',"Sandi Adrian Nur Rahman T.",'l',"Sibolga",'082329375332',"sandi@gmail.com"),
+('A06',"Fadly Ariansyah Putra",'l',"Sumatra Ba`perpustakaan`rat",'085696488763',"fadly@gmail.com"),
+('A07',"Arya Duta Adirajasa",'l',"Bandung",'085230091788',"arya@gamil.com");
+
+INSERT INTO pegawai VALUES 
+('W01',"Lira Rahmawati",'p',"bandung",'085321840791',"lira@gmail.com"),
+('W02',"Riri Triana",'p',"Banjar",'085765123950',"riri@gmail.com"),
+('W03',"Anisa Alawiyah",'p',"Batak",'085767921082',"nisa@gmail.com"),
+('W04',"Nur Jamilah",'p',"Bandung",'082924288090',"nurr@gmail.com"),
+('W05',"Salim Hidayat",'l',"Ciamis",'082329775332',"salim@gmail.com"),
+('W06',"Aditia Nurrohman",'l',"Banjar",'085646488763',"adit@gmail.com"),
+('W07',"Fadilah Aulia Muthmainah",'p',"Kebumen",'085280091788',"dila@gamil.com");
+
+INSERT INTO buku VALUES
+('B01',"5 cm","Donny Dhirgantoro","Grasindo"),
+('B02',"Cantik Itu Luka","Eka Kurniawan","Gramedia Pustaka Utama"),
+('B03',"atomic Habits","james Clear","Gramedia Pustaka Utama"),
+('B04',"Derap-derap Tasbih","Hadi S Kholi","Diva Pess"),
+('B05',"You Do You","Fellexandro Ruby","Gramedia Pustaka Utama"),
+('B06',"Arus Balik","Pramoedya Ananta Toer","Hasta Mitra"),
+('B07',"Heartbreak Motel","Ika Natassa","Gramedia Pustaka Utama");
+
+INSERT INTO peminjaman VALUES 
+('P01','A03',"2023-10-20","2023-10-25","2023-10-25"),
+('P02','A01',"2023-10-20","2023-10-25","2023-10-25"),
+('P03','A04',"2023-10-23","2023-10-28","2023-10-28"),
+('P04','A02',"2023-10-21","2023-10-26","2023-10-26"),
+('P05','A05',"2023-10-20","2023-10-25","2023-10-25"),
+('P06','A07',"2023-10-22","2023-10-27","2023-10-27"),
+('P07','A06',"2023-10-19","2023-10-24","2023-10-24");
+
